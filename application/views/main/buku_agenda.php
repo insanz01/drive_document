@@ -19,7 +19,7 @@
             <tbody>
               <?php
               $i = 1;
-              $list = ['Daftar Akta', 'Daftar Surat', 'Akta PPAT', 'Buku Tamu'];
+              $list = array('Daftar Akta', 'Daftar Surat', 'Akta PPAT', 'Buku Tamu');
               ?>
               <?php foreach ($agenda as $a) : ?>
                 <tr>
