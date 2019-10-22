@@ -30,7 +30,7 @@ class Berkas_Model extends CI_Model
   public function totalArsip()
   {
     // daftar akta -> daftar surat -> akta ppat -> buku tamu
-    $result = [];
+    $result = array();
 
     $result[] = array('total' => $this->db->count_all_results('akta'));
 
