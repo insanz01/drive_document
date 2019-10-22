@@ -7,12 +7,21 @@ class Berkas extends CI_Controller
     parent::__construct();
 
     $this->load->model('Berkas_Model', 'berkas');
+
+    // if (!$this->session->has_userdata('user_id')) {
+    //   redirect('auth');
+    // }
   }
 
   public function index()
   {
     $data['dokumen'] = $this->berkas->load_files();
+
+    $this->load->view('template/header');
+    $this->load->view('template/sidebar');
+    $this->load->view('template/topbar');
     $this->load->view('main/index', $data);
+    $this->load->view('template/footer');
   }
 
   public function tambah_berkas()
@@ -60,6 +69,107 @@ class Berkas extends CI_Controller
       $this->berkas->save_file($dokumen);
 
       redirect('berkas');
+    }
+  }
+
+  public function daftar_akta()
+  {
+    $data['akta'] = $this->berkas->tampilkanAkta();
+
+    $this->load->view('template/header');
+    $this->load->view('template/sidebar');
+    $this->load->view('template/topbar');
+    $this->load->view('main/daftar_akta', $data);
+    $this->load->view('template/footer');
+  }
+
+  public function tambah_daftar_akta()
+  {
+    $this->form_validation->set_rules('nomor', 'Nomor', 'required|trim');
+    $this->form_validation->set_rules('tanggal', 'Tanggal', 'required|trim');
+    $this->form_validation->set_rules('sifat', 'Sifat', 'required');
+    $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
+    $this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+    $this->form_validation->set_rules('nama_satu', 'Nama_Satu', 'required|trim');
+    $this->form_validation->set_rules('nama_satu', 'Nama_Dua', 'required|trim');
+    $this->form_validation->set_rules('nama_satu', 'Nama_Tiga', 'required|trim');
+
+    if ($this->form_validation->run() == FALSE) {
+      $this->load->view('template/header');
+      $this->load->view('template/sidebar');
+      $this->load->view('template/topbar');
+      $this->load->view('main/tambah/daftar_akta');
+      $this->load->view('template/footer');
+    } else {
+      $data = array(
+        'nomor' => $this->input->post('nomor'),
+        'tanggal' => $this->input->post('tanggal'),
+        'sifat' => $this->input->post('sifat'),
+        'nama' => $this->input->post('nama'),
+        'alamat' => $this->input->post('alamat'),
+        'nama_satu' => $this->input->post('nama_satu'),
+        'nama_dua' => $this->input->post('nama_dua'),
+        'nama_tiga' => $this->input->post('nama_tiga')
+      );
+
+      if ($this->berkas->simpanDaftarAkta($data)) {
+        redirect('berkas');
+      } else {
+        redirect('berkas/daftar_akta');
+      }
+    }
+  }
+
+  public function buku_tamu()
+  {
+    $data['tamu'] = $this->berkas->tampilkanTamu();
+
+    $this->load->view('template/header');
+    $this->load->view('template/sidebar');
+    $this->load->view('template/topbar');
+    $this->load->view('main/buku_tamu', $data);
+    $this->load->view('template/footer');
+  }
+
+  public function buku_agenda()
+  {
+    $data['agenda'] = $this->berkas->totalArsip();
+
+    $this->load->view('template/header');
+    $this->load->view('template/sidebar');
+    $this->load->view('template/topbar');
+    $this->load->view('main/buku_agenda', $data);
+    $this->load->view('template/footer');
+  }
+
+  public function tambah_buku_tamu()
+  {
+    $this->form_validation->set_rules('nama', 'Nama', 'required');
+    $this->form_validation->set_rules('alamat', 'Alamat', 'required');
+    $this->form_validation->set_rules('tanggal', 'Tanggal', 'required');
+    $this->form_validation->set_rules('nomor', 'Nomor', 'required');
+    $this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
+
+    if ($this->form_validation->run() == FALSE) {
+      $this->load->view('template/header');
+      $this->load->view('template/sidebar');
+      $this->load->view('template/topbar');
+      $this->load->view('main/tambah/buku_tamu');
+      $this->load->view('template/footer');
+    } else {
+      $data = array(
+        'nama' => $this->input->post('nama', 1),
+        'alamat' => $this->input->post('alamat', 1),
+        'tanggal' => $this->input->post('tanggal', 1),
+        'nomor' => $this->input->post('nomor', 1),
+        'keterangan' => $this->input->post('keterangan', 1)
+      );
+
+      if ($this->berkas->tambahBukuTamu($data)) {
+        redirect('berkas/buku_tamu');
+      } else {
+        redirect('berkas/tambah_buku_tamu');
+      }
     }
   }
 }

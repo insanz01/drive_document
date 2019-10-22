@@ -13,7 +13,15 @@
 </head>
 
 <body>
-
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="<?= base_url() ?>assets/img/logo-ini.jpeg" width="35" height="35" class="d-inline-block align-top" alt="">
+      App Arsip Notaris & PPAT
+    </a>
+    <button class="btn btn-outline-success float-right">
+      <i class="fas fa-fw fa-sign-out-alt"></i> Keluar
+    </button>
+  </nav>
   <div class="container">
     <div class="row">
       <div class="col-lg-7 mx-auto py-4">
@@ -21,8 +29,16 @@
           <div class="card-body">
             <form action="<?= base_url('berkas/store') ?>" method="post" enctype="multipart/form-data">
               <div class="form-group">
-                <label for="nama">Nama Berkas (optional)</label>
-                <input type="text" class="form-control" name="nama" id="nama" placeholder="jika hanya ingin mengubah nama file">
+                <label for="nama">Nama Berkas</label>
+                <input type="text" class="form-control" name="nama" id="nama">
+              </div>
+              <div class="form-group">
+                <label for="jenis">Jenis Akta</label>
+                <input type="text" class="form-control" name="jenis" id="jenis">
+              </div>
+              <div class="form-group">
+                <label for="nomor">Nomor Akta</label>
+                <input type="text" class="form-control" name="nomor" id="nomor">
               </div>
               <div class="form-group">
                 <label for="berkas">Berkas file</label>
