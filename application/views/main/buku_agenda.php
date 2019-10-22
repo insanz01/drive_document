@@ -1,9 +1,6 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12">
-      <a href="<?= base_url('tambah_daftar_akta') ?>" class="btn btn-primary float-right mb-2">Tambah Daftar Akta</a>
-    </div>
-    <div class="col-lg-12">
       <!-- Default Card Example -->
       <div class="card mb-4">
         <div class="card-header">
