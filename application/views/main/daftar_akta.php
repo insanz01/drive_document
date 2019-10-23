@@ -9,8 +9,8 @@
         <div class="card-header">
           Data Akta
         </div>
-        <div class="card-body">
-          <table id="myTable" class="table table-hovered table-striped table-bordered">
+        <div class="card-body table-responsive-lg">
+          <table id="myTable" class="table table-hovered table-striped table-bordered table-responsive-lg">
             <thead>
               <th>No</th>
               <th>Nomor</th>
@@ -22,7 +22,7 @@
               <th>Aksi</th>
             </thead>
             <tbody>
-              <?php $i = 0; ?>
+              <?php $i = 1; ?>
               <?php foreach ($akta as $a) : ?>
                 <tr>
                   <td><?= $i++; ?></td>
@@ -35,10 +35,10 @@
                   <td><?= $a['nama_dua'] ?></td>
                   <td><?= $a['nama_tiga'] ?></td>
                   <td>
-                    <a href="#" class="btn">
-                      <i class="fas fa-fw fa-edit-alt"></i>
+                    <a href="#" class="badge badge-primary">
+                      <i class="fas fa-fw fa-edit"></i>
                     </a>
-                    <a href="#" class="btn">
+                    <a href="#" class="badge badge-danger">
                       <i class="fas fa-fw fa-trash-alt"></i>
                     </a>
                   </td>

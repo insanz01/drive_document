@@ -30,7 +30,7 @@
               <input type="text" name="nama" id="nama" class="form-control">
             </div>
             <div class="form-group">
-              <label for="tempat">Tempat Kedudukan</label>
+              <label for="tempat">Alamat Kedudukan</label>
               <textarea name="alamat" id="tempat" cols="30" rows="10" class="form-control"></textarea>
             </div>
             <div class="form-group">

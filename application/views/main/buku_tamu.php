@@ -10,7 +10,7 @@
           Buku Tamu
         </div>
         <div class="card-body">
-          <table id="myTable" class="table table-hovered table-striped table-bordered">
+          <table width="100%" id="myTable" class="table table-hovered table-striped table-bordered">
             <thead>
               <th>No</th>
               <th>Nama</th>
@@ -21,7 +21,7 @@
               <th>Aksi</th>
             </thead>
             <tbody>
-              <?php $i = 0; ?>
+              <?php $i = 1; ?>
               <?php foreach ($tamu as $a) : ?>
                 <tr>
                   <td><?= $i++; ?></td>
@@ -32,10 +32,10 @@
                   <td><?= $a['nomor'] ?></td>
                   <td><?= $a['keterangan'] ?></td>
                   <td>
-                    <a href="#" class="btn">
-                      <i class="fas fa-fw fa-edit-alt"></i>
+                    <a href="#" class="badge badge-primary">
+                      <i class="fas fa-fw fa-edit"></i>
                     </a>
-                    <a href="#" class="btn">
+                    <a href="#" class="badge badge-danger">
                       <i class="fas fa-fw fa-trash-alt"></i>
                     </a>
                   </td>
