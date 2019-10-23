@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12">
-      <a href="<?= base_url('tambah_daftar_akta') ?>" class="btn btn-primary float-right mb-2">Tambah Tamu</a>
+      <a href="<?= base_url('berkas/tambah_buku_tamu') ?>" class="btn btn-primary float-right mb-2">Tambah Tamu</a>
     </div>
     <div class="col-lg-12">
       <!-- Default Card Example -->

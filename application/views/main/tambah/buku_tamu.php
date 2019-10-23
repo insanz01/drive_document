@@ -1,5 +1,10 @@
 <div class="container-fluid">
   <div class="row">
+    <div class="col-lg-12 py-2">
+      <a href="<?= base_url('berkas/buku_tamu') ?>">
+        <i class="fas fa-fw fa-arrow-left"></i> Kembali ke halaman sebelumnya
+      </a>
+    </div>
     <div class="col-lg-12">
       <!-- Default Card Example -->
       <div class="card mb-4">
