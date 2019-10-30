@@ -27,7 +27,7 @@
       <div class="col-lg-7 mx-auto py-4">
         <div class="card">
           <div class="card-body">
-            <form action="<?= base_url('berkas') ?>" method="post">
+            <form action="<?= base_url('auth') ?>" method="post">
               <div class="form-group">
                 <img src="<?= base_url() ?>assets/img/logo-login.jpeg" class="d-block w100 mx-auto" alt="">
               </div>

@@ -57,7 +57,7 @@
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url('Berkas/buku_tamu') ?>">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Buku Tamu</span></a>
+          <span>Data Nasabah</span></a>
       </li>
 
       <!-- Nav Item - Charts -->

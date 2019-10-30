@@ -9,7 +9,7 @@
       <!-- Default Card Example -->
       <div class="card mb-4">
         <div class="card-header">
-          Form Edit Buku Tamu
+          Form Edit Data Nasabah
         </div>
         <div class="card-body">
           <form action="<?= base_url('Berkas/ubah_buku_tamu/') . $id ?>" method="post">

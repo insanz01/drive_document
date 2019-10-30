@@ -9,7 +9,7 @@
       <!-- Default Card Example -->
       <div class="card mb-4">
         <div class="card-header">
-          Form Tambah Buku Tamu
+          Form Tambah Data Nasabah
         </div>
         <div class="card-body">
           <form action="<?= base_url('Berkas/tambah_buku_tamu') ?>" method="post">

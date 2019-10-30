@@ -6,7 +6,7 @@ class Auth_Model extends CI_Model
   {
     $user = $this->db->get('user', array('username' => $data['username']))->row_array();
 
-    if (password_verify($data['password'], $user['password'])) {
+    if ($data['password'] == $user['password']) {
       $this->session->set_userdata('user_id', $user['id']);
       $this->session->set_userdata('user_name', $user['username']);
 

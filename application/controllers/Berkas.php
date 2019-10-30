@@ -8,9 +8,9 @@ class Berkas extends CI_Controller
 
     $this->load->model('Berkas_Model', 'berkas');
 
-    // if (!$this->session->has_userdata('user_id')) {
-    //   redirect('auth');
-    // }
+    if (!$this->session->has_userdata('user_id')) {
+      redirect('auth');
+    }
   }
 
   public function index()
