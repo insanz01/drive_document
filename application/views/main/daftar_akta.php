@@ -35,10 +35,10 @@
                   <td><?= $a['nama_dua'] ?></td>
                   <td><?= $a['nama_tiga'] ?></td>
                   <td>
-                    <a href="#" class="badge badge-primary">
+                    <a href="<?= base_url('berkas/ubah_daftar_akta/') . $a['id'] ?>" class="badge badge-primary">
                       <i class="fas fa-fw fa-edit"></i>
                     </a>
-                    <a href="#" class="badge badge-danger">
+                    <a href="<?= base_url('berkas/hapus_akta/') . $a['id'] ?>" class="badge badge-danger">
                       <i class="fas fa-fw fa-trash-alt"></i>
                     </a>
                   </td>
