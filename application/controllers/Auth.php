@@ -26,9 +26,6 @@ class Auth extends CI_Controller
         'password' => $this->input->post('password', 1)
       );
 
-      var_dump($data);
-      die;
-
       if ($this->auth->login($data)) {
         redirect('berkas');
       } else {
