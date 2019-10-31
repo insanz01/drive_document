@@ -18,6 +18,14 @@
               <input type="text" name="nomor" id="nomor" class="form-control">
             </div>
             <div class="form-group">
+              <label for="jenis">Jenis Akta</label>
+              <select name="jenis" id="jenis" class="form-control">
+                <option value="PPAT">PPAT</option>
+                <option value="SKMHT">SKMHT</option>
+                <option value="JUAL BELI">JUAL BELI</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label for="tanggal">Tanggal Akta</label>
               <input type="date" name="tanggal" id="tanggal" class="form-control">
             </div>

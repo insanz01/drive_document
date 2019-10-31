@@ -25,6 +25,7 @@ class Berkas_Model extends CI_Model
   public function simpanPerubahanDaftarAkta($data)
   {
     $this->db->set('nomor', $data['nomor']);
+    $this->db->set('jenis', $data['jenis']);
     $this->db->set('tanggal', $data['tanggal']);
     $this->db->set('sifat', $data['sifat']);
     $this->db->set('nama', $data['nama']);
@@ -38,12 +39,20 @@ class Berkas_Model extends CI_Model
     return $this->db->affected_rows();
   }
 
-  public function tampilkanAkta()
+  public function tampilkanAkta($bulan = '', $jenis = '')
   {
-    return $this->db->get('akta')->result_array();
+    if ($bulan == '' && $jenis == '') {
+      return $this->db->get('akta')->result_array();
+    } else {
+      $this->db->select('*');
+      $this->db->from('akta');
+      $this->db->where('month(tanggal)', $bulan);
+      $this->db->where('jenis', $jenis);
+      return $this->db->get()->result_array();
+    }
   }
 
-  public function tampikanSatuAkta($id)
+  public function tampilkanSatuAkta($id)
   {
     return $this->db->get('akta', array('id' => $id))->row_array();
   }
@@ -58,20 +67,27 @@ class Berkas_Model extends CI_Model
     // daftar akta -> daftar surat -> akta ppat -> buku tamu
     $result = array();
 
-    $result[] = array('total' => $this->db->count_all_results('akta'));
-
     $result[] = array('total' => 0);
 
     $result[] = array('total' => 0);
 
-    $result[] = array('total' => $this->db->count_all_results('bukutamu'));
+    $result[] = array('total' => 0);
+
+    // $result[] = array('total' => $this->db->count_all_results('bukutamu'));
 
     return $result;
   }
 
-  public function tampilkanTamu()
+  public function tampilkanTamu($filter = '')
   {
-    return $this->db->get('bukutamu')->result_array();
+    if ($filter == '') {
+      return $this->db->get('bukutamu')->result_array();
+    } else {
+      $this->db->select('*');
+      $this->db->from('bukutamu');
+      $this->db->where('month(tanggal)', $filter);
+      return $this->db->get()->result_array();
+    }
   }
 
   public function tampilkanSatuTamu($id)
@@ -131,9 +147,16 @@ class Berkas_Model extends CI_Model
     return $this->db->affected_rows();
   }
 
-  public function tampilkanAPPT()
+  public function tampilkanAPPT($filter = '')
   {
-    return $this->db->get('appt')->result_array();
+    if ($filter == '') {
+      return $this->db->get('appt')->result_array();
+    } else {
+      $this->db->select('*');
+      $this->db->from('appt');
+      $this->db->where('month(tanggal_akta)', $filter);
+      return $this->db->get()->result_array();
+    }
   }
 
   public function tampilkanSatuAPPT($id)

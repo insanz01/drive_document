@@ -9,7 +9,7 @@
       <!-- Default Card Example -->
       <div class="card mb-4">
         <div class="card-header">
-          Form Edit APPT
+          Form Edit PPAT
         </div>
         <div class="card-body">
           <form action="<?= base_url('Berkas/ubah_appt/') . $id ?>" method="post">

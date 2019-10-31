@@ -40,15 +40,15 @@
       </li>
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="<?= base_url('Berkas/daftar_surat') ?>">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Daftar surat</span></a>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('Berkas/akta_ppat') ?>">
+        <a class="nav-link" href="<?= base_url('Berkas/appt') ?>">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Akta PPAT</span></a>
       </li>
@@ -64,7 +64,7 @@
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url('Berkas/buku_agenda') ?>">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Buku Agenda</span></a>
+          <span>Rekap Dokumen</span></a>
       </li>
 
       <!-- Divider -->

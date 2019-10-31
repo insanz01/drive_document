@@ -7,7 +7,7 @@
       <!-- Default Card Example -->
       <div class="card mb-4">
         <div class="card-header">
-          Buku Tamu
+          Daftar Surat
         </div>
         <div class="card-body">
           <table width="100%" id="myTable" class="table table-hovered table-striped table-bordered">

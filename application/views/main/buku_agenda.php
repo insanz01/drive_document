@@ -4,10 +4,10 @@
       <!-- Default Card Example -->
       <div class="card mb-4">
         <div class="card-header">
-          Buku Agenda
+          Rekap Dokumen
         </div>
         <div class="card-body">
-          <table id="myTable" class="table table-hovered table-striped table-bordered">
+          <table id="" class="table table-hovered table-striped table-bordered">
             <thead>
               <th width="5%" class="text-center">No</th>
               <th width="90%" class="text-center">Nama Tabel Arsip</th>
@@ -16,7 +16,8 @@
             <tbody>
               <?php
               $i = 1;
-              $list = array('Daftar Akta', 'Daftar Surat', 'Akta PPAT', 'Buku Tamu');
+              // $list = array('Daftar Akta', 'Daftar Surat', 'Akta PPAT', 'Buku Tamu');
+              $list = array('APHT', 'SKMHT', 'JUAL BELI');
               ?>
               <?php foreach ($agenda as $a) : ?>
                 <tr>

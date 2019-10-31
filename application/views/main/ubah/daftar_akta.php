@@ -18,6 +18,14 @@
               <input type="text" name="nomor" id="nomor" class="form-control" value="<?= $isi['nomor'] ?>">
             </div>
             <div class="form-group">
+              <label for="jenis">Jenis Akta</label>
+              <select name="jenis" id="jenis" class="form-control">
+                <option value="APHT" <?= ($isi['jenis'] == 'APHT' ? 'selected' : '') ?>>APHT</option>
+                <option value="SKMHT" <?= ($isi['jenis'] == 'SKMHT' ? 'selected' : '') ?>>SKMHT</option>
+                <option value="JUAL BELI" <?= ($isi['jenis'] == 'JUAL BELI' ? 'selected' : '') ?>>JUAL BELI</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label for="tanggal">Tanggal Akta</label>
               <input type="date" name="tanggal" id="tanggal" class="form-control" value="<?= $isi['tanggal'] ?>">
             </div>

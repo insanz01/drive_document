@@ -9,7 +9,7 @@
       <!-- Default Card Example -->
       <div class="card mb-4">
         <div class="card-header">
-          Form Tambah APPT
+          Form Tambah PPAT
         </div>
         <div class="card-body">
           <form action="<?= base_url('Berkas/tambah_appt') ?>" method="post">

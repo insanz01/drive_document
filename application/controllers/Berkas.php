@@ -74,7 +74,19 @@ class Berkas extends CI_Controller
 
   public function daftar_akta()
   {
-    $data['akta'] = $this->berkas->tampilkanAkta();
+    $data['akta'] = NULL;
+
+    $bulan = $this->input->post('bulan');
+    $jenis = $this->input->post('jenis');
+
+    if ($bulan or $jenis) {
+      $data['akta'] = $this->berkas->tampilkanAkta($bulan, $jenis);
+    } else {
+      $data['akta'] = $this->berkas->tampilkanAkta();
+    }
+
+    $data['bulan'] = $bulan;
+    $data['jenis'] = $jenis;
 
     $this->load->view('template/header');
     $this->load->view('template/sidebar');
@@ -86,6 +98,7 @@ class Berkas extends CI_Controller
   public function ubah_daftar_akta($id)
   {
     $this->form_validation->set_rules('nomor', 'Nomor', 'required|trim');
+    $this->form_validation->set_rules('jenis', 'Jenis', 'required|trim');
     $this->form_validation->set_rules('tanggal', 'Tanggal', 'required|trim');
     $this->form_validation->set_rules('sifat', 'Sifat', 'required');
     $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
@@ -108,6 +121,7 @@ class Berkas extends CI_Controller
       $data = array(
         'id' => $id,
         'nomor' => $this->input->post('nomor'),
+        'jenis' => $this->input->post('jenis'),
         'tanggal' => $this->input->post('tanggal'),
         'sifat' => $this->input->post('sifat'),
         'nama' => $this->input->post('nama'),
@@ -139,6 +153,7 @@ class Berkas extends CI_Controller
   public function tambah_daftar_akta()
   {
     $this->form_validation->set_rules('nomor', 'Nomor', 'required|trim');
+    $this->form_validation->set_rules('jenis', 'Jenis', 'required|trim');
     $this->form_validation->set_rules('tanggal', 'Tanggal', 'required|trim');
     $this->form_validation->set_rules('sifat', 'Sifat', 'required');
     $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
@@ -156,6 +171,7 @@ class Berkas extends CI_Controller
     } else {
       $data = array(
         'nomor' => $this->input->post('nomor'),
+        'jenis' => $this->input->post('jenis'),
         'tanggal' => $this->input->post('tanggal'),
         'sifat' => $this->input->post('sifat'),
         'nama' => $this->input->post('nama'),
@@ -175,7 +191,17 @@ class Berkas extends CI_Controller
 
   public function buku_tamu()
   {
-    $data['tamu'] = $this->berkas->tampilkanTamu();
+    $data['tamu'] = NULL;
+
+    $bulan = $this->input->post('bulan');
+
+    if ($bulan) {
+      $data['tamu'] = $this->berkas->tampilkanTamu($bulan);
+    } else {
+      $data['tamu'] = $this->berkas->tampilkanTamu();
+    }
+
+    $data['bulan'] = $bulan;
 
     $this->load->view('template/header');
     $this->load->view('template/sidebar');
@@ -366,7 +392,17 @@ class Berkas extends CI_Controller
 
   public function appt()
   {
-    $data['appt'] = $this->berkas->tampilkanAPPT();
+    $data['tamu'] = NULL;
+
+    $bulan = $this->input->post('bulan');
+
+    if ($bulan) {
+      $data['appt'] = $this->berkas->tampilkanAPPT($bulan);
+    } else {
+      $data['appt'] = $this->berkas->tampilkanAPPT();
+    }
+
+    $data['bulan'] = $bulan;
 
     $this->load->view('template/header');
     $this->load->view('template/sidebar');
