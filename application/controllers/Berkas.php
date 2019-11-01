@@ -26,7 +26,11 @@ class Berkas extends CI_Controller
 
   public function tambah_berkas()
   {
+    $this->load->view('template/header');
+    $this->load->view('template/sidebar');
+    $this->load->view('template/topbar');
     $this->load->view('main/add');
+    $this->load->view('template/footer');
   }
 
   public function hapus_berkas()
