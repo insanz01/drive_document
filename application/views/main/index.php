@@ -38,7 +38,7 @@
               </td>
               <td class="text-center">
                 <button type="button" class="badge badge-danger badge-pill" ketempelan="<?= $d['id'] ?>" kerasukan="<?= $d['path'] ?>" data-toggle="modal" data-target="#hapusModal" onclick="getId(this)">
-                  hapus
+                  <i class="fas fa-fw fa-trash-alt"></i>
                 </button>
               </td>
             </tr>
