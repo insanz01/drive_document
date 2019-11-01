@@ -64,14 +64,32 @@ class Berkas_Model extends CI_Model
 
   public function totalArsip()
   {
-    // daftar akta -> daftar surat -> akta ppat -> buku tamu
+    // APHT -> SKMHT -> JUAL BELI
     $result = array();
 
-    $result[] = array('total' => 0);
+    # APHT
+    $this->db->select('count(*) as total');
+    $this->db->from('akta');
+    $this->db->where('jenis', 'APHT');
+    $apht = $this->db->get()->row();
 
-    $result[] = array('total' => 0);
+    # SKMHT
+    $this->db->select('count(*) as total');
+    $this->db->from('akta');
+    $this->db->where('jenis', 'SKMHT');
+    $skmht = $this->db->get()->row();
 
-    $result[] = array('total' => 0);
+    # JUAL BELI
+    $this->db->select('count(*) as total');
+    $this->db->from('akta');
+    $this->db->where('jenis', 'JUAL BELI');
+    $jb = $this->db->get()->row();
+
+    $result[] = array('total' => $apht->total);
+
+    $result[] = array('total' => $skmht->total);
+
+    $result[] = array('total' => $jb->total);
 
     // $result[] = array('total' => $this->db->count_all_results('bukutamu'));
 
