@@ -21,7 +21,7 @@
   </div>
   <div class="row">
     <div class="col-12 mx-auto">
-      <table class="table table-hover" id="tabelku" width="100%">
+      <table class="table table-hover" id="myTable" width="100%">
         <thead>
           <th width="60%">Nama Dokumen</th>
           <th width="20%" class="text-center">Download</th>
@@ -75,11 +75,13 @@
 </div>
 
 <script>
-  $(document).ready(function() {
-    $('#tabelku').DataTable();
-  });
+  // $(document).ready(function() {
+  //   $('#tabelku').DataTable();
+  // });
 
   const getId = (e) => {
+    console.log(e)
+
     let id = document.getElementById('id_hapus');
     let path = document.getElementById('path_hapus');
 

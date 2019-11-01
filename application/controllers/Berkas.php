@@ -32,8 +32,8 @@ class Berkas extends CI_Controller
   public function hapus_berkas()
   {
     if ($this->berkas->delete_file($this->input->post('id'))) {
-      $this->session->set_flashdata('pesan', "<div class='alert alert-success' role='alert'>File berhasil dihapus</div>");
       unlink($this->input->post('path'));
+      $this->session->set_flashdata('pesan', "<div class='alert alert-success' role='alert'>File berhasil dihapus</div>");
     } else {
       $this->session->set_flashdata('pesan', "<div class='alert alert-danger' role='alert'>File gagal dihapus</div>");
     }
